@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  // no need for appDir anymore
+}
 
-export default nextConfig;
+export default nextConfig
