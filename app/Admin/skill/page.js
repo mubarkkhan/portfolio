@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Sidebar from "../Common/Sidebar";
 import Header from "../Common/Header";
 import { handleGetAPI, handlePostAPI } from "@/app/Utilities/Utils";
-import socket from "@/lib/socket";
+import socket from "../../../Lib/socket";
 
 export default function SkillManager() {
   const [skills, setSkills] = useState([]);

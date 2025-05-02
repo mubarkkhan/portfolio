@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setScrollInto } from "../Toolkit/project_slice";
 import { handleGetAPI } from "../Utilities/Utils";
-import socket from '@/lib/socket';
+import socket from '../../Lib/socket';
 
 export default function Project() {
     const sliceData = useSelector((state) => state.proSlice.value)

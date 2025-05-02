@@ -5,7 +5,7 @@ import ProjectList from "./Child/ProjectList";
 import Sidebar from "../Common/Sidebar";
 import Header from "../Common/Header";
 import Cookies from "js-cookie";
-import socket from "@/lib/socket";
+import socket from "../../../Lib/socket";
 import { handleGetAPI, handlePostAPI } from "@/app/Utilities/Utils";
 
 export default function AdminProjects() {
