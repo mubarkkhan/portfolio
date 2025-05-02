@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { Send, X } from 'lucide-react';
-import socket from '@/lib/socket';
+import socket from '../../Lib/socket';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function ChatBox() {

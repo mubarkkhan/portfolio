@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import socket from "@/lib/socket";
+import socket from "../../Lib/socket";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ChatPage() {
