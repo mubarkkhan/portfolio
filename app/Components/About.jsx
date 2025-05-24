@@ -37,9 +37,7 @@ export default function AboutMe() {
         <section ref={aboutRef} className="py-20 bg-white dark:bg-gray-900 text-center px-6">
             <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-10">About Me</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
-                I'm Mubark Khan, a passionate Full Stack Developer with expertise in React, Next.js, Node.js, and MySQL. 
-                With over 8 months of professional experience in web development, I specialize in building dynamic, high-performance applications.
-                My journey started with a strong foundation in Mathematics, which enhances my logical problem-solving skills.
+                Full-Stack Developer with 1 year of hands-on experience building scalable flight and hotel booking platforms using React.js, Node.js, and MySQL. Experienced in developing B2C, B2B, and Admin Panels with strong focus on responsive design, secure authentication (JWT), API integration, and performance optimization. Known for strong problem-solving ability, team collaboration, and attention to clean UI/UX design.
             </p>
             
             <div className="mt-12 max-w-4xl mx-auto">
@@ -50,18 +48,18 @@ export default function AboutMe() {
                         <span className="text-sm text-gray-400">2021 - 2024</span>
                     </div>
                     <div className="mb-8">
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Full Stack Developer Course</h3>
-                        <p className="text-gray-600 dark:text-gray-300">Completed an intensive 8-month course on modern web technologies like React, Node.js, and MySQL.</p>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Frontend Developer Course</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Completed an intensive 6-month course on modern web technologies like HTML5, CSS3, JavaScript and React.js.</p>
                         <span className="text-sm text-gray-400">2023</span>
                     </div>
                     <div className="mb-8">
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Internship at TeamXML</h3>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Internship at Teamindiawebdesign</h3>
                         <p className="text-gray-600 dark:text-gray-300">Worked on a flight and hotel booking website, gaining hands-on experience in real-world projects.</p>
                         <span className="text-sm text-gray-400">2023 - 2024</span>
                     </div>
                     <div>
-                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">React Developer at Current Company</h3>
-                        <p className="text-gray-600 dark:text-gray-300">Developing B2C websites and e-commerce platforms, specializing in user-friendly UI/UX and optimized performance.</p>
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white">React Developer at Teamindiawebdesign</h3>
+                        <p className="text-gray-600 dark:text-gray-300">Developed full-scale flight and hotel booking platforms for B2C and B2B users. Created responsive and user-friendly UIs using React.js, implemented secure authentication flows, and integrated third-party APIs. Also contributed to admin and agent dashboards with dynamic data handling and performance-focused design.</p>
                         <span className="text-sm text-gray-400">2024 - Present</span>
                     </div>
                 </div>
