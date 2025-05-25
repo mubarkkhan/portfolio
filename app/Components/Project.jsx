@@ -9,42 +9,7 @@ import socket from "../../Lib/socket";
 export default function Project() {
   const sliceData = useSelector((state) => state.proSlice.value);
   const project = useRef(null);
-  const [projectData, setProjectData] = useState([]);
-  const dispatch = useDispatch();
-  const fetchData = async () => {
-    try {
-      const result = await handleGetAPI("admin/getProject");
-      if (result.data.status === true && result.data.result.length > 0) {
-        setProjectData(result.data.result);
-      } else {
-        // fallback to static data
-        setProjectData([
-          {
-            id: 1,
-            title: "Flight Booking Website",
-            description:
-              "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
-            technologies: ["React", "Node.js", "Express", "MySQL"],
-            imgurl: "/images/flightPro.avif",
-            url: "https://flightbooking.example.com",
-            giturl: "https://github.com/yourusername/flight-booking",
-          },
-          {
-            id: 2,
-            title: "Portfolio Website",
-            description:
-              "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
-            technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-            imgurl: "/images/portfolio.jpeg",
-            url: "https://mk01portfolio.vercel.app/",
-            giturl: "https://github.com/mubarkkhan/portfolio",
-          },
-        ]);
-      }
-    } catch (e) {
-      console.log(e, "error");
-      // fallback to static data in case of error
-      setProjectData([
+  const [projectData, setProjectData] = useState([
         {
           id: 1,
           title: "Flight Booking Website",
@@ -66,6 +31,63 @@ export default function Project() {
           giturl: "https://github.com/mubarkkhan/portfolio",
         },
       ]);
+  const dispatch = useDispatch();
+  const fetchData = async () => {
+    try {
+      const result = await handleGetAPI("admin/getProject");
+      if (result.data.status === true && result.data.result.length > 0) {
+        setProjectData(result.data.result);
+      }
+      // else {
+      //   // fallback to static data
+      //   setProjectData([
+      //     {
+      //       id: 1,
+      //       title: "Flight Booking Website",
+      //       description:
+      //         "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
+      //       technologies: ["React", "Node.js", "Express", "MySQL"],
+      //       imgurl: "/images/flightPro.avif",
+      //       url: "https://flightbooking.example.com",
+      //       giturl: "https://github.com/yourusername/flight-booking",
+      //     },
+      //     {
+      //       id: 2,
+      //       title: "Portfolio Website",
+      //       description:
+      //         "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
+      //       technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      //       imgurl: "/images/portfolio.jpeg",
+      //       url: "https://mk01portfolio.vercel.app/",
+      //       giturl: "https://github.com/mubarkkhan/portfolio",
+      //     },
+      //   ]);
+      // }
+    } catch (e) {
+      console.log(e, "error");
+      // fallback to static data in case of error
+      // setProjectData([
+      //   {
+      //     id: 1,
+      //     title: "Flight Booking Website",
+      //     description:
+      //       "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
+      //     technologies: ["React", "Node.js", "Express", "MySQL"],
+      //     imgurl: "/images/flightPro.avif",
+      //     url: "https://flightbooking.example.com",
+      //     giturl: "https://github.com/yourusername/flight-booking",
+      //   },
+      //   {
+      //     id: 2,
+      //     title: "Portfolio Website",
+      //     description:
+      //       "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
+      //     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      //     imgurl: "/images/portfolio.jpeg",
+      //     url: "https://mk01portfolio.vercel.app/",
+      //     giturl: "https://github.com/mubarkkhan/portfolio",
+      //   },
+      // ]);
     }
   };
 
