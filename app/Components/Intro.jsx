@@ -155,9 +155,9 @@ export default function Intro() {
 
         {/* Animated Counters */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 w-full max-w-4xl">
-            <StatCard label="Projects Completed" end={1} color="text-blue-600" />
-            <StatCard label="Happy Clients" end={1} color="text-yellow-500" />
-            <StatCard label="Technologies Used" end={3} color="text-green-500" />
+            <StatCard label="Projects Completed" end={2} color="text-blue-600" />
+            <StatCard label="Happy Clients" end={2} color="text-yellow-500" />
+            <StatCard label="Technologies Used" end={4} color="text-green-500" />
         </div>
 
         {/* Tech Icons */}
