@@ -38,56 +38,56 @@ export default function Project() {
       if (result.data.status === true && result.data.result.length > 0) {
         setProjectData(result.data.result);
       }
-      // else {
-      //   // fallback to static data
-      //   setProjectData([
-      //     {
-      //       id: 1,
-      //       title: "Flight Booking Website",
-      //       description:
-      //         "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
-      //       technologies: ["React", "Node.js", "Express", "MySQL"],
-      //       imgurl: "/images/flightPro.avif",
-      //       url: "https://flightbooking.example.com",
-      //       giturl: "https://github.com/yourusername/flight-booking",
-      //     },
-      //     {
-      //       id: 2,
-      //       title: "Portfolio Website",
-      //       description:
-      //         "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
-      //       technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      //       imgurl: "/images/portfolio.jpeg",
-      //       url: "https://mk01portfolio.vercel.app/",
-      //       giturl: "https://github.com/mubarkkhan/portfolio",
-      //     },
-      //   ]);
-      // }
+      else {
+        // fallback to static data
+        setProjectData([
+          {
+            id: 1,
+            title: "Flight Booking Website",
+            description:
+              "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
+            technologies: ["React", "Node.js", "Express", "MySQL"],
+            imgurl: "/Images/flightPro.avif",
+            url: "https://flightbooking.example.com",
+            giturl: "https://github.com/yourusername/flight-booking",
+          },
+          {
+            id: 2,
+            title: "Portfolio Website",
+            description:
+              "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
+            technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+            imgurl: "/Images/portfolio.jpeg",
+            url: "https://mk01portfolio.vercel.app/",
+            giturl: "https://github.com/mubarkkhan/portfolio",
+          },
+        ]);
+      }
     } catch (e) {
       console.log(e, "error");
       // fallback to static data in case of error
-      // setProjectData([
-      //   {
-      //     id: 1,
-      //     title: "Flight Booking Website",
-      //     description:
-      //       "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
-      //     technologies: ["React", "Node.js", "Express", "MySQL"],
-      //     imgurl: "/images/flightPro.avif",
-      //     url: "https://flightbooking.example.com",
-      //     giturl: "https://github.com/yourusername/flight-booking",
-      //   },
-      //   {
-      //     id: 2,
-      //     title: "Portfolio Website",
-      //     description:
-      //       "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
-      //     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      //     imgurl: "/images/portfolio.jpeg",
-      //     url: "https://mk01portfolio.vercel.app/",
-      //     giturl: "https://github.com/mubarkkhan/portfolio",
-      //   },
-      // ]);
+      setProjectData([
+        {
+          id: 1,
+          title: "Flight Booking Website",
+          description:
+            "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
+          technologies: ["React", "Node.js", "Express", "MySQL"],
+          imgurl: "/Images/flightPro.avif",
+          url: "https://flightbooking.example.com",
+          giturl: "https://github.com/yourusername/flight-booking",
+        },
+        {
+          id: 2,
+          title: "Portfolio Website",
+          description:
+            "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
+          technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+          imgurl: "/Images/portfolio.jpeg",
+          url: "https://mk01portfolio.vercel.app/",
+          giturl: "https://github.com/mubarkkhan/portfolio",
+        },
+      ]);
     }
   };
 
