@@ -7,17 +7,19 @@ import { v4 as uuidv4 } from "uuid";
 export default function ChatPage() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [clientId] = useState(uuidv4);
+  const [clientId] = useState(uuidv4());
   const [user, setUser] = useState({ name: "", email: "" });
   const [isChatStarted, setIsChatStarted] = useState(false);
 
   useEffect(() => {
     if (isChatStarted) {
-      socket.emit("joinRoom", { room: "support", clientId });
+      socket.emit("joinRoom", { room: "support", clientId, name: user.name, email: user.email });
       socket.on("joinmsg", (msg) => {
+        console.log('send msg',msg)
         setMessages((prev) => [...prev, msg]);
       });
       socket.on("recieveRoomMsg", (msg) => {
+        console.log('rec msg',msg)
         setMessages((prev) => [...prev, msg]);
       });
 
@@ -49,6 +51,7 @@ export default function ChatPage() {
   const handleStartChat = (e) => {
     e.preventDefault();
     if (user.name && user.email) {
+      socket.emit("registerClient", { clientId, name: user.name, email: user.email });
       setIsChatStarted(true);
     }
   };
@@ -98,7 +101,7 @@ export default function ChatPage() {
                     }`}
                   >
                     <span>
-                      {msg.clientId === clientId ? "You: " : `${msg.name || "User"}: `} {msg.message}
+                      {msg.clientId === clientId ? `You: ` : `${msg.name || "User"}: `} {msg.message}
                     </span>
                     <span className="text-xs text-gray-500 ml-4">{msg.time}</span>
                   </div>
