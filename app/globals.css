@@ -32,3 +32,7 @@ html {
 html.lenis {
   scroll-behavior: auto !important;
 }
+.custom-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: auto !important;
+}

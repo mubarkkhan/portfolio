@@ -12,7 +12,7 @@ export default function Home() {
   useSmoothScroll();
   return (
     <>
-      <ChatBox/>
+      {/* <ChatBox/> */}
       <Navbar/>
       <Intro />
       <Project />

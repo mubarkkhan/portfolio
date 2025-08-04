@@ -5,115 +5,36 @@ import { useDispatch, useSelector } from "react-redux";
 import { setScrollInto } from "../Toolkit/project_slice";
 import { handleGetAPI } from "../Utilities/Utils";
 import socket from "../../Lib/socket";
+import ProjectDetailModal from "./ProjectModal";
+
+const data = [
+  {
+    id: 1,
+    title: "Flight Booking Website",
+    description:
+      "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
+    technologies: ["React", "Node.js", "Express", "MySQL", "JWT"],
+    imgurl: "/images/flightPro.avif",
+    url: "https://flightbooking.example.com",
+    giturl: "",
+  },
+  {
+    id: 2,
+    title: "Hotel & Flight Booking Platform (UK Client)",
+    description:
+      "Developed a hotel and flight booking system with separate user and admin panels. Implemented all backend APIs, frontend logic, and admin features. UI design was handled by another team member.",
+    technologies: ["React", "Node.js", "Express", "MySQL", "JWT"],
+    imgurl: "/images/fh2.jpg", // You can change this image path as needed
+    url: "https://hotelbooking.example.com", // Add real URL or leave blank
+    giturl: "", // Private project, so leave empty or "#"
+  }
+];
 
 export default function Project() {
   const sliceData = useSelector((state) => state.proSlice.value);
   const project = useRef(null);
-  const [projectData, setProjectData] = useState([
-        {
-          id: 1,
-          title: "Flight Booking Website",
-          description:
-            "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
-          technologies: ["React", "Node.js", "Express", "MySQL"],
-          imgurl: "/images/flightPro.avif",
-          url: "https://flightbooking.example.com",
-          giturl: "https://github.com/yourusername/flight-booking",
-        },
-        {
-          id: 2,
-          title: "Portfolio Website",
-          description:
-            "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
-          technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-          imgurl: "/images/portfolio.jpeg",
-          url: "https://mk01portfolio.vercel.app/",
-          giturl: "https://github.com/mubarkkhan/portfolio",
-        },
-      ]);
+  const [selectedProject, setSelectedProject] = useState(null);
   const dispatch = useDispatch();
-  const fetchData = async () => {
-    try {
-      const result = await handleGetAPI("admin/getProject");
-      if (result.data.status === true && result.data.result.length > 0) {
-        setProjectData(result.data.result);
-      }
-      else {
-        // fallback to static data
-        setProjectData([
-          {
-            id: 1,
-            title: "Flight Booking Website",
-            description:
-              "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
-            technologies: ["React", "Node.js", "Express", "MySQL"],
-            imgurl: "/Images/flightPro.avif",
-            url: "https://flightbooking.example.com",
-            giturl: "https://github.com/yourusername/flight-booking",
-          },
-          {
-            id: 2,
-            title: "Portfolio Website",
-            description:
-              "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
-            technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-            imgurl: "/Images/portfolio.jpeg",
-            url: "https://mk01portfolio.vercel.app/",
-            giturl: "https://github.com/mubarkkhan/portfolio",
-          },
-        ]);
-      }
-    } catch (e) {
-      console.log(e, "error");
-      // fallback to static data in case of error
-      setProjectData([
-        {
-          id: 1,
-          title: "Flight Booking Website",
-          description:
-            "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
-          technologies: ["React", "Node.js", "Express", "MySQL"],
-          imgurl: "/Images/flightPro.avif",
-          url: "https://flightbooking.example.com",
-          giturl: "https://github.com/yourusername/flight-booking",
-        },
-        {
-          id: 2,
-          title: "Portfolio Website",
-          description:
-            "A personal portfolio website showcasing projects, skills, and contact form with smooth animations.",
-          technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-          imgurl: "/Images/portfolio.jpeg",
-          url: "https://mk01portfolio.vercel.app/",
-          giturl: "https://github.com/mubarkkhan/portfolio",
-        },
-      ]);
-    }
-  };
-
-  useEffect(() => {
-    socket.on("sendProject", (data) => {
-      setProjectData((prev) => [...prev, data]);
-    });
-    socket.on("sendEditProject", (data) => {
-      setProjectData((prev) =>
-        prev?.map((pr) =>
-          String(pr?.id) === String(data?.id) ? { ...pr, ...data } : pr
-        )
-      );
-    });
-    socket.on("deleteProject", (id) => {
-      setProjectData((prev) =>
-        prev?.filter((k) => Number(k?.id) !== Number(id))
-      );
-    });
-    fetchData();
-    return () => {
-      socket.off("sendProject");
-      socket.off("sendEditProject");
-      socket.off("deleteProject");
-    };
-  }, []);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -149,7 +70,7 @@ export default function Project() {
       </h2>
 
       <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-        {projectData?.map((pr, index) => (
+        {data?.map((pr, index) => (
           <div
             key={index}
             className="relative group overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-2xl"
@@ -188,32 +109,24 @@ export default function Project() {
               </div>
 
               {/* Links */}
-              <div className="flex justify-center flex-wrap gap-4 mt-6">
-                {pr?.url && (
-                  <a
-                    href={pr.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition"
-                  >
-                    🌐 Live Site
-                  </a>
-                )}
-                {/* {pr?.giturl && (
-                  <a
-                    href={pr.giturl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-800 dark:bg-gray-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-900 dark:hover:bg-gray-600 transition"
-                  >
-                    🔗 GitHub Code
-                  </a>
-                )} */}
-              </div>
+              {/* <div className="flex justify-center flex-wrap gap-4 mt-6">
+                <button
+                  onClick={() => setSelectedProject(pr)}
+                  className="bg-gray-800 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-900 transition"
+                >
+                  📄 Overview
+                </button>
+              </div> */}
             </div>
           </div>
         ))}
       </div>
+      {selectedProject && (
+        <ProjectDetailModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 }
