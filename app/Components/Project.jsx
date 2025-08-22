@@ -24,7 +24,7 @@ const data = [
     description:
       "Developed a hotel and flight booking system with separate user and admin panels. Implemented all backend APIs, frontend logic, and admin features. UI design was handled by another team member.",
     technologies: ["React", "Node.js", "Express", "MySQL", "JWT"],
-    imgurl: "/Images/fh2.jpg", // You can change this image path as needed
+    imgurl: "/Images/hotel.jpg", // You can change this image path as needed
     url: "https://hotelbooking.example.com", // Add real URL or leave blank
     giturl: "", // Private project, so leave empty or "#"
   }
