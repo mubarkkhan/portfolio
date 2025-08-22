@@ -14,7 +14,7 @@ const data = [
     description:
       "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
     technologies: ["React", "Node.js", "Express", "MySQL", "JWT"],
-    imgurl: "/images/flightPro.avif",
+    imgurl: "/Images/flightPro.avif",
     url: "https://flightbooking.example.com",
     giturl: "",
   },
@@ -24,7 +24,7 @@ const data = [
     description:
       "Developed a hotel and flight booking system with separate user and admin panels. Implemented all backend APIs, frontend logic, and admin features. UI design was handled by another team member.",
     technologies: ["React", "Node.js", "Express", "MySQL", "JWT"],
-    imgurl: "/images/fh2.jpg", // You can change this image path as needed
+    imgurl: "/Images/fh2.jpg", // You can change this image path as needed
     url: "https://hotelbooking.example.com", // Add real URL or leave blank
     giturl: "", // Private project, so leave empty or "#"
   }
