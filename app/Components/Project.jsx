@@ -7,27 +7,96 @@ import { handleGetAPI } from "../Utilities/Utils";
 import socket from "../../Lib/socket";
 import ProjectDetailModal from "./ProjectModal";
 
-const data = [
+  const data = [
   {
     id: 1,
-    title: "Flight Booking Website",
+    title: "asapfly – Flight Booking Software",
     description:
-      "A responsive flight and hotel booking platform with real-time search, filters, and payment integration.",
-    technologies: ["React", "Node.js", "Express", "MySQL", "JWT"],
-    imgurl: "/Images/flightPro.avif",
-    url: "https://flightbooking.example.com",
+      "A complete flight booking software with Amadeus API integration for live flight data, fare family details on the flight detail page, and Authorize.net for secure payment gateway.",
+    fullDescription:
+      "Developed an end-to-end flight booking software (except UI design) with Amadeus API for dynamic flights, Authorize.net for payments, and B2C, B2B, Staff, Admin portals.",
+    technologies: [
+      "React",
+      "Redux",
+      "Node.js",
+      "Express",
+      "MySQL",
+      "Redis",
+      "Amadeus API",
+      "Authorize.net",
+    ],
+    imgurl: "/Images/asap.png",
+    url: "https://asapfly.com",
     giturl: "",
+    sections: [
+      {
+        title: "🔧 Frontend",
+        color: "border-blue-600",
+        content: "React, Redux",
+      },
+      {
+        title: "⚙ Backend",
+        color: "border-green-600",
+        content: "Node.js, Express.js, Amadeus API, Authorize.net",
+      },
+      {
+        title: "🗄 Database",
+        color: "border-yellow-500",
+        content: "MySQL, Redis",
+      },
+      {
+        title: "🧩 Project Type",
+        color: "border-purple-600",
+        content:
+          "Complete flight booking project with B2C, B2B, Staff, and Admin portals",
+      },
+      {
+        title: "⚠ Problems Faced & Solutions",
+        color: "border-red-500",
+        isList: true,
+        content: [
+          "Complex Amadeus API integration → solved with custom middleware",
+          "Role-based flows for B2C, B2B, staff, admin → solved with RBAC",
+          "Real-time booking updates → implemented polling + server-side updates",
+        ],
+      },
+    ],
   },
   {
     id: 2,
     title: "Hotel & Flight Booking Platform (UK Client)",
     description:
-      "Developed a hotel and flight booking system with separate user and admin panels. Implemented all backend APIs, frontend logic, and admin features. UI design was handled by another team member.",
+      "Developed a hotel and flight booking system with separate user and admin panels. Implemented all backend APIs, frontend logic, and admin features.",
+    fullDescription:
+      "This project was for a UK client where I handled backend APIs, business logic, and admin features. Another team member managed UI design.",
     technologies: ["React", "Node.js", "Express", "MySQL", "JWT"],
-    imgurl: "/Images/hotel.jpg", // You can change this image path as needed
-    url: "https://hotelbooking.example.com", // Add real URL or leave blank
-    giturl: "", // Private project, so leave empty or "#"
-  }
+    imgurl: "/Images/hotel.jpg",
+    url: "https://hotelbooking.example.com",
+    giturl: "",
+    sections: [
+      {
+        title: "🔧 Frontend",
+        color: "border-blue-600",
+        content: "React, Redux",
+      },
+      {
+        title: "⚙ Backend",
+        color: "border-green-600",
+        content: "Node.js, Express.js, REST APIs",
+      },
+      {
+        title: "🗄 Database",
+        color: "border-yellow-500",
+        content: "MySQL",
+      },
+      {
+        title: "🧩 Contribution",
+        color: "border-purple-600",
+        content:
+          "Implemented all backend APIs, business logic, and admin features",
+      },
+    ],
+  },
 ];
 
 export default function Project() {
@@ -109,14 +178,14 @@ export default function Project() {
               </div>
 
               {/* Links */}
-              {/* <div className="flex justify-center flex-wrap gap-4 mt-6">
+              <div className="flex justify-center flex-wrap gap-4 mt-6">
                 <button
                   onClick={() => setSelectedProject(pr)}
                   className="bg-gray-800 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-900 transition"
                 >
                   📄 Overview
                 </button>
-              </div> */}
+              </div>
             </div>
           </div>
         ))}

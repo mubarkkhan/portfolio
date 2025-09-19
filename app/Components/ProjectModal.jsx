@@ -37,70 +37,31 @@ export default function ProjectDetailModal({ project, onClose }) {
 
         {/* Content Sections */}
         <div className="space-y-6 text-left">
-          {[
-            {
-              title: "🔧 Frontend",
-              color: "border-blue-600",
-              content: "React, Redux, Sass CSS",
-            },
-            {
-              title: "⚙ Backend",
-              color: "border-green-600",
-              content: "Node.js, Express.js, REST API, Amadeus integration",
-            },
-            {
-              title: "🗄 Database",
-              color: "border-yellow-500",
-              content: "MySQL",
-            },
-            {
-              title: "🧩 Project Type",
-              color: "border-purple-600",
-              content:
-                "Complete flight booking project with B2C, B2B, Staff, and Admin portals",
-            },
-            {
-              title: "📝 Client Testimonial",
-              color: "border-pink-500",
-              content:
-                "“Very happy with the end product. User-friendly, fast and complete solution for flight booking.”",
-              italic: true,
-            },
-            {
-              title: "⚠ Problems Faced & Solutions",
-              color: "border-red-500",
-              isList: true,
-              content: [
-                "Complex integration with Amadeus API – solved by studying docs deeply & writing custom middleware",
-                "Maintaining separate flows for B2C, B2B, staff & admin – solved by role-based access control",
-                "Real-time booking updates – implemented with polling and server-side updates",
-              ],
-            },
-          ].map((section, idx) => (
-            <div key={idx}>
-              <h4
-                className={`text-lg font-semibold text-gray-900 dark:text-white mb-1 border-l-4 ${section.color} pl-2`}
-              >
-                {section.title}
-              </h4>
-              {section.isList ? (
-                <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1">
-                  {section.content.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p
-                  className={`text-gray-700 dark:text-gray-300 ${
-                    section.italic ? "italic" : ""
-                  }`}
-                >
-                  {section.content}
-                </p>
-              )}
-            </div>
+  {project?.sections?.map((section, idx) => (
+    <div key={idx}>
+      <h4
+        className={`text-lg font-semibold text-gray-900 dark:text-white mb-1 border-l-4 ${section.color} pl-2`}
+      >
+        {section.title}
+      </h4>
+      {section.isList ? (
+        <ul className="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-1">
+          {section.content.map((item, i) => (
+            <li key={i}>{item}</li>
           ))}
-        </div>
+        </ul>
+      ) : (
+        <p
+          className={`text-gray-700 dark:text-gray-300 ${
+            section.italic ? "italic" : ""
+          }`}
+        >
+          {section.content}
+        </p>
+      )}
+    </div>
+  ))}
+</div>
 
         {/* Live Link */}
         {project?.url && (

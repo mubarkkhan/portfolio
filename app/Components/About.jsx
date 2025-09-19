@@ -37,7 +37,12 @@ export default function AboutMe() {
         <section ref={aboutRef} className="py-20 bg-white dark:bg-gray-900 text-center px-6">
             <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-10">About Me</h2>
             <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto">
-                Full-Stack Developer with 1 year 3 months of experience building scalable flight and hotel booking platforms using React.js, Node.js, and MySQL. Proficient in developing B2C, B2B, and Admin panels with a strong focus on responsive UI, secure JWT-based authentication, seamless API integration, and performance optimization. Recognized for problem-solving skills, clean code practices, and collaborative team mindset with attention to UI/UX design.
+                Full-Stack Developer with 1+ year of hands-on experience delivering B2C, B2B, Agent, Staff, and Admin
+panels for flight & hotel booking platforms. Skilled in React.js, Node.js, Express.js, and MySQL, with
+expertise in JWT authentication, third-party API integrations (Amadeus, HotelBeds), and scalable REST
+API design.
+Proven ability to take end-to-end ownership — from frontend UI/UX to backend business logic and database
+design. Strong focus on performance optimization, real-time data handling, and clean code practices.
             </p>
             
             {/* <div className="mt-12 max-w-4xl mx-auto">
@@ -100,7 +105,7 @@ export default function AboutMe() {
 </div>
 
             <div className="mt-10">
-                <a href="/PDF/Mubark_Khan_Full_Stack_Developer.pdf" download className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition dark:hover:bg-blue-500">
+                <a href="/PDF/Mubark_Khan_FullStack_Developer.pdf" download className="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition dark:hover:bg-blue-500">
                     📄 Download Resume
                 </a>
             </div>

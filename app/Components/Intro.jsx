@@ -62,59 +62,6 @@ export default function Intro() {
   );
 
   return (
-    // <section
-    //     ref={introRef}
-    //     className="bg-gray-100 dark:bg-gray-900 py-20 flex flex-col items-center text-center px-6 transition-colors duration-300"
-    // >
-    //     <h1 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
-    //         Hi, I'm Mubark Khan
-    //     </h1>
-    //     <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mb-6">
-    //         <Typewriter
-    //             words={[
-    //                 "React.js Developer 🚀",
-    //                 "UI Enthusiast 💻",
-    //                 "Code. Create. Deliver. ✅",
-    //             ]}
-    //             loop={true}
-    //             cursor
-    //             cursorStyle="_"
-    //             typeSpeed={70}
-    //             deleteSpeed={50}
-    //             delaySpeed={1500}
-    //         />
-    //     </p>
-
-    //     {/* Animated Counters */}
-    //     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 w-full max-w-4xl">
-    //         <StatCard label="Projects Completed" end={15} color="text-blue-600" />
-    //         <StatCard label="Happy Clients" end={10} color="text-yellow-500" />
-    //         <StatCard label="Technologies Used" end={8} color="text-green-500" />
-    //     </div>
-    //     {/* <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mb-6">
-    //         A passionate React.js developer crafting high-performance and user-friendly applications.
-    //     </p>
-    //     <div className="flex gap-4 mb-6">
-    //         <a
-    //             onClick={() =>handleClick("project")}
-    //             className="bg-blue-600 cursor-pointer text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition"
-    //         >
-    //             🚀 View My Work
-    //         </a>
-    //         <a
-    //             onClick={() =>handleClick("contact")}
-    //             className="bg-gray-800 cursor-pointer dark:bg-gray-700 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-gray-900 transition"
-    //         >
-    //             📩 Contact Me
-    //         </a>
-    //     </div> */}
-    //     <ul className="flex gap-6 text-3xl text-gray-700 dark:text-gray-300">
-    //         <li className="w-10 h-10"><FaReact /></li>
-    //         <li className="w-10 h-10"><RiNextjsFill /></li>
-    //         <li className="w-10 h-10"><FaNodeJs /></li>
-    //         <li className="w-10 h-10"><GrMysql /></li>
-    //     </ul>
-    // </section>
     <section
       ref={introRef}
       className="relative bg-gray-100 dark:bg-gray-900 py-24 flex flex-col items-center text-center px-6 overflow-hidden"
@@ -139,11 +86,11 @@ export default function Intro() {
       >
         <Typewriter
           words={[
-            "Full Stack Developer | React.js & Node.js 🚀",
-            "Frontend-focused, Backend-ready — end-to-end delivery 🔁",
-            "Crafting scalable apps with clean code & fast UX 💡",
-            "Passionate about sleek UI and secure APIs ⚛️",
-            "Code. Collaborate. Create. ✨",
+            "Full Stack Developer | React.js | Next.js | Node.js | MySQL",
+            "B.Sc. Mathematics → Frontend Dev → Full Stack Developer",
+            "Built Flight, Hotel & Visa Booking Platforms",
+            "Specialized in API Integration & Secure Role-Based Systems",
+            "Clean Code. Scalable Apps. Great UX",
           ]}
           loop={true}
           cursor
@@ -156,23 +103,11 @@ export default function Intro() {
 
       {/* Animated Counters */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 w-full max-w-4xl">
-        <StatCard label="Projects Completed" end={2} color="text-blue-600" />
-        <StatCard label="Happy Clients" end={2} color="text-yellow-500" />
-        <StatCard label="Technologies Used" end={4} color="text-green-500" />
+        <StatCard label="Projects Completed" end={1} color="text-blue-600" />
+        <StatCard label="Months of Experience" end={17} color="text-yellow-500" />
+        <StatCard label="Technologies Used" end={6} color="text-green-500" />
       </div>
-      {/* <motion.ul
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex gap-6 text-4xl text-gray-700 dark:text-gray-300"
-        >
-            <li className="hover:scale-110 transition-transform duration-300"><FaReact /></li>
-            <li className="hover:scale-110 transition-transform duration-300"><RiNextjsFill /></li>
-            <li className="hover:scale-110 transition-transform duration-300"><FaNodeJs /></li>
-                <li className="hover:scale-110 transition-transform duration-300"><GrMysql /></li>
-                <li className="hover:scale-110 transition-transform duration-300"> <SiSocketdotio /></li>
-               
-        </motion.ul> */}
+
       <motion.ul
         initial="hidden"
         animate="visible"
