@@ -150,7 +150,8 @@ export default function Project() {
               <Image
                 src={pr.imgurl}
                 alt={pr.title || "Project Image"}
-                fill
+                    width={400}
+    height={224}
                 className="w-full h-56 object-cover group-hover:opacity-80 transition duration-300"
               />
             )}
