@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setScrolling, setScrollInto } from "../Toolkit/project_slice";
 import { setTheme } from "../Toolkit/ThemeSlice";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -25,9 +26,11 @@ export default function Navbar() {
     <header className="bg-white dark:bg-gray-950 shadow-md py-4 px-6 flex justify-between items-center sticky top-0 z-50 transition-all duration-300 ease-in-out">
       <div className="text-2xl font-bold text-gray-900 dark:text-white">
         {mounted && (
-          <img
-            src={theme === "dark" ? "Images/mdark1.png" : "Images/mlight.png"}
+          <Image
+            src={theme === "dark" ? "/Images/mdark1.png" : "/Images/mlight.png"}
             alt="Logo"
+            width={40}
+  height={40}
             className="h-10 w-auto"
           />
         )}

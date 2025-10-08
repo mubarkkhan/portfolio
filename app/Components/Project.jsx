@@ -6,6 +6,7 @@ import { setScrollInto } from "../Toolkit/project_slice";
 import { handleGetAPI } from "../Utilities/Utils";
 import socket from "../../Lib/socket";
 import ProjectDetailModal from "./ProjectModal";
+import Image from "next/image";
 
   const data = [
   {
@@ -146,9 +147,10 @@ export default function Project() {
           >
             {/* Image */}
             {pr?.imgurl && (
-              <img
+              <Image
                 src={pr.imgurl}
                 alt={pr.title || "Project Image"}
+                fill
                 className="w-full h-56 object-cover group-hover:opacity-80 transition duration-300"
               />
             )}
