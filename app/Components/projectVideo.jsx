@@ -36,7 +36,7 @@ export default function ProjectDemo() {
         className="w-full rounded-lg shadow-lg dark:grayscale"
         poster="/videos/video-poster.png"
       >
-        <source src="/video/asapfly1.mp4" type="video/mp4" />
+        <source src="/video/asapfly.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
