@@ -3,6 +3,7 @@ import AboutMe from "./Components/About";
 import ChatBox from "./Components/ChatBox";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
+import AdUnit from "./Components/googleUnit";
 import Intro from "./Components/Intro";
 import Navbar from "./Components/Navbar";
 import Project from "./Components/Project";
@@ -15,7 +16,9 @@ export default function Home() {
     <>
       <Navbar/>
       <Intro />
+      <AdUnit/>
       <Project />
+      <AdUnit/>
       <ProjectDemo/>
       <AboutMe/>
       <Contact />
