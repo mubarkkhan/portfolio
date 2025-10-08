@@ -19,6 +19,9 @@ export const metadata = {
   title: "Mubark Khan | Flight Booking Software & Travel App Projects",
   description:
     "Portfolio of Mubark Khan showcasing full-stack flight booking application using Amadeus API, available for freelancing and collaborations.",
+  alternates: {
+  canonical: "https://mk01portfolio.vercel.app/",
+},
   openGraph: {
     title: "Mubark Khan | Full Stack Developer",
     description: "Portfolio of Mubark Khan, showcasing projects and skills.",
@@ -63,6 +66,25 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        <Script
+  id="structured-data"
+  type="application/ld+json"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: "Mubark Khan",
+      jobTitle: "Full Stack Developer",
+      url: "https://mk01portfolio.vercel.app",
+      sameAs: [
+        "https://github.com/mubarkkhan",
+        "https://www.linkedin.com/in/mubarkkhan",
+      ],
+    }),
+  }}
+/>
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
