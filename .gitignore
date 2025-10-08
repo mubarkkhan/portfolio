@@ -41,4 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 #video
-/public/video/*.mp4
+/public/video/asapfly.mp4
